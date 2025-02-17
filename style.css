@@ -1,0 +1,203 @@
+
+    /* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(45deg, #4b0082, #8a2be2, #da70d6);
+    background-size: 300% 300%;
+    animation: bgAnimation 8s infinite alternate;
+    margin: 0;
+    padding-top: 40px; /* Adjusted for fixed navbar */
+    text-align: center;
+    color: #fff;
+}
+
+/* Fixed Navigation Bar */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #333;
+    padding: 10px 0;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 16px;
+    transition: background 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+/* Mobile Navigation */
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    padding: 10px 20px;
+    position: absolute;
+    left: 10px;
+}
+
+@media (max-width: 768px) {
+    nav {
+        justify-content: space-between;
+        padding: 10px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 40px;
+        left: -10px;
+        width: 50%;
+        background-color: #333;
+        opacity: 90%;
+        padding: 20px 0;
+        border-radius: 12px;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    nav ul li {
+        text-align: center;
+        margin: 10px 0;
+    }
+}
+
+/* Header with Background Image */
+header {
+    width: 100%;
+    height: 300px;
+    background-image: url('logo.jpeg'), url('hall.jpg'); 
+    background-size: contain, cover; /* Logo will be contained, hall will cover */
+    background-position: center, center; 
+    background-repeat: no-repeat, no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 999;
+}
+
+
+/* Main Content */
+main, section {
+    padding: 60px 20px;
+}
+
+/* Headings & Text */
+h1 {
+    font-size: 36px;
+    margin: 0;
+}
+
+h2 {
+    font-size: 28px;
+    color: #d8bfff;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+    animation: glow 1.5s infinite alternate;
+}
+
+h3 {
+    font-size: 22px;
+    color: #fff;
+}
+
+p {
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+/* Animations */
+@keyframes bgAnimation {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 5px rgba(0, 0, 0, 0.6); }
+    to { text-shadow: 0 0 10px rgb(150, 148, 148); }
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+    #main {
+        width: 85%;
+        padding: 15px;
+    }
+}
+#venue, #Facilities, #main{
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    width: 80%;
+    margin: 10px auto; /* Adds space around the elements */
+    opacity: 0; /* Hidden initially */
+    transform: translateY(20px); /* Slightly pushed down */
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+#venue.visible, #Facilities.visible, #main.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#contact {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 5px;
+    border-radius: 12px;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 18px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+a {
+    color: #000000;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+#FB {
+    font-size: 25px;
+}
